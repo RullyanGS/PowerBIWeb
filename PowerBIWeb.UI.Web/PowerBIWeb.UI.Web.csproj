@@ -6,4 +6,13 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.9.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PowerBIWeb.Domain\PowerBIWeb.Domain.csproj" />
+    <ProjectReference Include="..\PowerBIWeb.Infra.IOC\PowerBIWeb.Infra.IOC.csproj" />
+  </ItemGroup>
+
 </Project>

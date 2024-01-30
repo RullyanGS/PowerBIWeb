@@ -1,8 +1,26 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <div class="row">
+        <section id="text-container" class="embed-container col-lg-4 col-md-4 col-sm-4 mb-5 ml-5 mt-5">
+            <div>
+                <p>
+                    Power BI Embedded Showcase Project
+                </p>
+                @foreach (var workspaces in ViewBag.Reports)
+                {
+                    <p>@(workspaces.WorkspaceName)</p>
+                    @foreach (var reports in workspaces.Reports)
+                    {
+                        <p><a href="#" onclick="getembedinfo('@(workspaces.WorkspaceId)', '@(reports.ReportId)'); return false;">@(reports.ReportName)</a></p>
+                    }
+                }
+            </div>
+        </section>
+        <section id="report-container" class="embed-container col-lg-offset-4 col-lg-7 col-md-offset-5 col-md-7 col-sm-offset-5 col-sm-7 mt-5">
+        </section>
+        <section class="error-container m-5">
+        </section>
+    </div>
 </div>
